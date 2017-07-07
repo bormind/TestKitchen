@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7DCAFAFA1F05C5590013C128 /* TestKitchen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCAFAF01F05C5580013C128 /* TestKitchen.framework */; };
-		7DCAFAFF1F05C5590013C128 /* TestKitchenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCAFAFE1F05C5590013C128 /* TestKitchenTests.swift */; };
 		7DCAFB011F05C5590013C128 /* TestKitchen.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCAFAF31F05C5580013C128 /* TestKitchen.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DCAFB0A1F05C8FC0013C128 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F981E08B90C768D0503BCB /* TestHelpers.swift */; };
 		7DCAFB0B1F05C9120013C128 /* KitchenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F98233FB1ED8C1A0D7B707 /* KitchenViewModel.swift */; };
@@ -35,7 +34,6 @@
 		7DCAFAF31F05C5580013C128 /* TestKitchen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestKitchen.h; sourceTree = "<group>"; };
 		7DCAFAF41F05C5580013C128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DCAFAF91F05C5590013C128 /* TestKitchenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestKitchenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DCAFAFE1F05C5590013C128 /* TestKitchenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKitchenTests.swift; sourceTree = "<group>"; };
 		7DCAFB001F05C5590013C128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6F9819BA67D3C6410298605 /* EvenBetterKitchenViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenBetterKitchenViewModelTests.swift; sourceTree = "<group>"; };
 		D6F981E08B90C768D0503BCB /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		7DCAFAFD1F05C5590013C128 /* TestKitchenTests */ = {
 			isa = PBXGroup;
 			children = (
-				7DCAFAFE1F05C5590013C128 /* TestKitchenTests.swift */,
 				7DCAFB001F05C5590013C128 /* Info.plist */,
 				D6F981E08B90C768D0503BCB /* TestHelpers.swift */,
 				D6F98B36B138279CDCB48E57 /* BadKitchenViewModelTests.swift */,
@@ -225,7 +222,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DCAFAFF1F05C5590013C128 /* TestKitchenTests.swift in Sources */,
 				7DCAFB0A1F05C8FC0013C128 /* TestHelpers.swift in Sources */,
 				D6F983BD3573D52386CA83FD /* BadKitchenViewModelTests.swift in Sources */,
 				7DCAFB0B1F05C9120013C128 /* KitchenViewModel.swift in Sources */,
