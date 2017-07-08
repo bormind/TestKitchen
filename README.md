@@ -26,7 +26,7 @@ There are three implementations of the TestCase classes testing this functionali
 
 To demonstrate the test functionality we first run all the tests and see that they all pass. Then we 'decide to do dishes in the evening' by commenting out `doDishes()` call in in the `startTheDay()` function in [KitchenViewModel](Source/TestKitchen/KitchenViewModel.swift#L18) and un-commenting `doDishes()` call in `finishTheDay()`. After that we run tests again. Expectation is that our `testDishesAreCleanedInTheMorning()` will fail but all other tests `testCanMakeCoffee()` and `testCanMakeTea()` fill pass. But in our `BadKitchenViewModelTests` tests that nothing to do with 'washing dishes' are failing as well!! 
 
-<img src="Images/FailingTests.png" alt="Drawing" style="width: 150px;"/>
+<img src="Images/FailingTests.png" alt="Drawing" style="width: 100px;"/>
 
 This  means that someone who's concern is about 'doing dishes in the evening' will suddenly have to learn how 'to do coffee and tee' to make this tests to pass! 
 
