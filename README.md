@@ -24,7 +24,7 @@ There are three implementations of the TestCase classes testing this functionali
 2. `BetterKitchenViewModelTests` - Implementation that isolates parts of the state that can be impacted, by filtering out non relevant parts of the state
 3. `EvenBetterKitchenViewModelTests` - improvement on implementation #2 - by using custom `assertExpectedValues` function we don't need to explicitly filter relevant state parts in every case function
 
-### To demonstrate the test functionality we first run all the tests and see that they all pass. Then we 'decide to do dishes in the evening' by commenting out `doDishes()` call in in the `startTheDay()` function in [KitchenViewModel](Source/TestKitchen/KitchenViewModel.swift#L18) and un-commenting `doDishes()` call in `finishTheDay()`. After that we run tests again. Expectation is that our `testDishesAreCleanedInTheMorning()` will fail but all other tests `testCanMakeCoffee()` and `testCanMakeTea()` fill pass. But in our `BadKitchenViewModelTests` tests that nothing to do with 'washing dishes' are failing as well!! 
+To demonstrate the test functionality we first run all the tests and see that they all pass. Then we 'decide to do dishes in the evening' by commenting out `doDishes()` call in in the `startTheDay()` function in [KitchenViewModel](Source/TestKitchen/KitchenViewModel.swift#L18) and un-commenting `doDishes()` call in `finishTheDay()`. After that we run tests again. Expectation is that our `testDishesAreCleanedInTheMorning()` will fail but all other tests `testCanMakeCoffee()` and `testCanMakeTea()` fill pass. But in our `BadKitchenViewModelTests` tests that nothing to do with 'washing dishes' are failing as well!! 
 
 <img src="Images/FailingTests.png" alt="Drawing" style="width: 200px;"/>
 
