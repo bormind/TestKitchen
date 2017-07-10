@@ -3,7 +3,7 @@ This is reference implementation of unit testing functionality of the methods (w
 ## Why 
 To highlight an importance of keeping test isolated - independent of actions that are not part of the testing scenario  
 ## How
-In our scenario Class is a `KitchenViewController` and it has five methods:
+`KitchenViewController` is a buiseness logic Class. It has five methods:
 ```Swift
 //Initialization function
 startTheDay() 
