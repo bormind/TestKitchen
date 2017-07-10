@@ -30,7 +30,7 @@ To demonstrate the test functionality we first run all the tests and see that th
 
 <img src="Images/FailingTests.png" alt="Drawing" style="width:200px;"/>
 
-This example is less about the details of how the isolated test should be implemented and more about the importance of the isolation itself. Potentially alternative approach can be taken by allowing our KitchenTracker to have `flush()` functionality that can be invoked between action calls in tests.   
+This example is less about the details of how the isolated test should be implemented and more about the importance of the test isolation itself. Potentially alternative approach can be taken by allowing our KitchenTracker to have `flush()` functionality that can be invoked between action calls in tests.   
 
 
 
