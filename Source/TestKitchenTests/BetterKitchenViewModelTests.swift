@@ -18,6 +18,56 @@ class BetterKitchenViewModelTests : XCTestCase {
     print("tearDown")
   }
 
+  func testCanMakeCoffeeAfterDayStarted() {
+    let filterRelevant = relevantValues(["Kitchen Day Started", "Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"])
+
+    let tracker = KitchenTracker()
+    vm.config(tracker: tracker)
+
+    XCTAssertEqual([], tracker.values)
+
+    vm.startTheDay()
+
+    vm.makeCoffee()
+
+    XCTAssertEqual(["Kitchen Day Started",
+                    "Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"],
+      tracker.values |> filterRelevant)
+
+    vm.makeCoffee()
+
+    XCTAssertEqual(["Kitchen Day Started",
+                    "Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready",
+                    "Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"],
+      tracker.values |> filterRelevant)
+
+  }
+
+  func testCanMakeTeaAfterDayStarted() {
+    let filterRelevant = relevantValues(["Kitchen Day Started", "Boil the watter", "Tea is ready"])
+
+    let tracker = KitchenTracker()
+    vm.config(tracker: tracker)
+
+    XCTAssertEqual([], tracker.values)
+
+    vm.startTheDay()
+
+    vm.makeTea()
+
+    XCTAssertEqual(["Kitchen Day Started",
+                    "Boil the watter", "Tea is ready"],
+      tracker.values |> filterRelevant)
+
+    vm.makeTea()
+
+    XCTAssertEqual(["Kitchen Day Started",
+                    "Boil the watter", "Tea is ready",
+                    "Boil the watter", "Tea is ready"],
+      tracker.values |> filterRelevant)
+
+  }
+
   func testDishesAreCleanedInTheMorning() {
     let filterRelevant = relevantValues(["Kitchen Day Started", "Washed Dishes"])
 
@@ -29,52 +79,14 @@ class BetterKitchenViewModelTests : XCTestCase {
     vm.startTheDay()
 
     XCTAssertEqual(["Kitchen Day Started", "Washed Dishes"], tracker.values |> filterRelevant)
-  }
 
-  func testCanMakeCoffee() {
-    let filterRelevant = relevantValues(["Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"])
+    //Can clean again
+    vm.doDishes()
 
-    let tracker = KitchenTracker()
-    vm.config(tracker: tracker)
-
-    XCTAssertEqual([], tracker.values)
-
-    vm.startTheDay()
-
-    vm.makeCoffee()
-
-    XCTAssertEqual(["Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"],
+    assertExpectedValues(["Kitchen Day Started", "Washed Dishes", "Washed Dishes"],
       tracker.values |> filterRelevant)
-
-    vm.makeCoffee()
-
-    XCTAssertEqual(["Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready",
-                    "Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"],
-      tracker.values |> filterRelevant)
+    
 
   }
-
-  func testCanMakeTea() {
-    let filterRelevant = relevantValues(["Boil the watter", "Tea is ready"])
-
-    let tracker = KitchenTracker()
-    vm.config(tracker: tracker)
-
-    XCTAssertEqual([], tracker.values)
-
-    vm.startTheDay()
-
-    vm.makeTea()
-
-    XCTAssertEqual(["Boil the watter", "Tea is ready"],
-      tracker.values |> filterRelevant)
-
-    vm.makeTea()
-
-    XCTAssertEqual(["Boil the watter", "Tea is ready",
-                    "Boil the watter", "Tea is ready"],
-      tracker.values |> filterRelevant)
-
-  }
-
+  
 }

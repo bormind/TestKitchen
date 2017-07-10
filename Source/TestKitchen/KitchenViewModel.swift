@@ -15,7 +15,7 @@ final class KitchenViewModel {
 
   func startTheDay() {
     tracker.log("Kitchen Day Started")
-//    doDishes()
+    doDishes()
   }
 
   func doDishes() {
@@ -23,7 +23,7 @@ final class KitchenViewModel {
   }
 
   func finishTheDay() {
-    doDishes()
+//    doDishes()
     tracker.log("Kitchen Day Finished")
   }
 

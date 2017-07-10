@@ -18,6 +18,50 @@ class EvenBetterKitchenViewModelTests : XCTestCase {
     print("tearDown")
   }
 
+  func testCanMakeCoffeeAfterDayStarted() {
+    let tracker = KitchenTracker()
+    vm.config(tracker: tracker)
+
+    assertExpectedValues([], tracker.values)
+
+    vm.startTheDay()
+
+    vm.makeCoffee()
+
+    assertExpectedValues(["Kitchen Day Started",
+                          "Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"], tracker.values)
+
+    //can make more coffie
+    vm.makeCoffee()
+
+    assertExpectedValues(["Kitchen Day Started",
+                          "Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready",
+                          "Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"], tracker.values)
+
+  }
+
+  func testCanMakeTeaAfterDayStarted() {
+    let tracker = KitchenTracker()
+    vm.config(tracker: tracker)
+
+    assertExpectedValues([], tracker.values)
+
+    vm.startTheDay()
+
+    vm.makeTea()
+
+    assertExpectedValues(["Kitchen Day Started",
+                          "Boil the watter", "Tea is ready"], tracker.values)
+
+    //can make more tee
+    vm.makeTea()
+
+    assertExpectedValues(["Kitchen Day Started",
+                          "Boil the watter", "Tea is ready",
+                          "Boil the watter", "Tea is ready"], tracker.values)
+
+  }
+
   func testDishesAreCleanedInTheMorning() {
     let tracker = KitchenTracker()
     vm.config(tracker: tracker)
@@ -27,44 +71,13 @@ class EvenBetterKitchenViewModelTests : XCTestCase {
     vm.startTheDay()
 
     assertExpectedValues(["Kitchen Day Started", "Washed Dishes"], tracker.values)
-  }
 
-  func testCanMakeCoffee() {
-    let tracker = KitchenTracker()
-    vm.config(tracker: tracker)
+    //Can clean again
+    vm.doDishes()
 
-    assertExpectedValues([], tracker.values)
-
-    vm.startTheDay()
-
-    vm.makeCoffee()
-
-    assertExpectedValues(["Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"], tracker.values)
-
-    vm.makeCoffee()
-
-    assertExpectedValues(["Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready",
-                          "Grind Coffee Beans", "Bring Coffee From Starbucks", "Coffee is ready"], tracker.values)
+    assertExpectedValues(["Kitchen Day Started", "Washed Dishes", "Washed Dishes"], tracker.values)
 
   }
-
-  func testCanMakeTea() {
-    let tracker = KitchenTracker()
-    vm.config(tracker: tracker)
-
-    assertExpectedValues([], tracker.values)
-
-    vm.startTheDay()
-
-    vm.makeTea()
-
-    assertExpectedValues(["Boil the watter", "Tea is ready"], tracker.values)
-
-    vm.makeTea()
-
-    assertExpectedValues(["Boil the watter", "Tea is ready",
-                          "Boil the watter", "Tea is ready"], tracker.values)
-
-  }
+  
 
 }
