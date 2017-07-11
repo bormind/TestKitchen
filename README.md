@@ -1,5 +1,5 @@
 ## What
-This is an example of "Bad" - non isolated test cases and "Better" - isolated test cases. This is a platform for the discussion on importance of the test case isolation.
+This is an example of "Bad" - non isolated test cases and "Better" - isolated test cases. This is a platform for the discussion on importance of the unit test isolation.
 ## Why 
 To highlight an importance of keeping test isolated - independent of actions that are not part of the testing scenario  
 ## How
