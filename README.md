@@ -1,5 +1,5 @@
 ## What
-This is reference implementation of unit testing functionality of the methods (we call them actions) of the Class that produce an accumulated state.
+This is an example of "Bad" - non isolated test cases and "Better" - isolated test cases for the discussion on importance of the test case isolation.
 ## Why 
 To highlight an importance of keeping test isolated - independent of actions that are not part of the testing scenario  
 ## How
